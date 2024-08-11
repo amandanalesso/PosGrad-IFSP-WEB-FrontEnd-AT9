@@ -1,0 +1,10 @@
+<div class="todo-container">
+  <input class="task-input" type="text" placeholder="Add a new task" [(ngModel)]="newTask" (keyup.enter)="addTask()" />
+  <button class="add-btn" (click)="addTask()">Add Task</button>
+  <ul *ngIf="tasks.length > 0">
+    <li *ngFor="let task of tasks" class="task-item">
+      <span>{{ task }}</span>
+      <button class="remove-btn" (click)="removeTask(task)">Remove</button>
+    </li>
+  </ul>
+</div>
